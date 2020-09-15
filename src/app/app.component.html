@@ -1,0 +1,8 @@
+<div class="container">
+  <app-navbar (SendToParent)="recivedFromClient($event)" [parentToClient]="title"></app-navbar>
+  <div class="row mt-3 mb-3">
+    <div class="col-md-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

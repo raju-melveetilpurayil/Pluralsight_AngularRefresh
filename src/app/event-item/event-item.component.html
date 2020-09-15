@@ -1,0 +1,22 @@
+
+<div class="card mb-3" style="border-color:forestgreen;min-height: 275px;" [routerLink]="['/events',eventSource.id]">
+    <!-- <img [src]="eventSource.imageUrl" class="card-img-top" class="image-fluid" alt="..."> -->
+    <h5 class="card-header bg-success text-white">{{eventSource.name}}</h5>
+    <div class="card-body d-flex flex-column" style="padding:3px;margin:3px">
+       
+        <div class="card-text mt-2 mb-3">
+            <div>Price: {{eventSource.price}}</div>
+            <div >Date: {{eventSource.date}}</div>
+            <div
+            [ngStyle]="getStartTimeStyle()"
+            [ngSwitch]="eventSource?.time">Time :{{eventSource.time}}
+                <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+                <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
+                <span *ngSwitchDefault>(Normal Start)</span>
+            </div>
+            <div *ngIf="eventSource?.OnlineUrl">Online: {{eventSource?.OnlineUrl}}</div>
+        </div>
+
+    <a href="#" class="btn btn-success mt-auto" style="margin-bottom: 0.5rem !important;">Go somewhere</a>
+    </div>
+</div>
